@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="GeneratedFiles">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{a8a03d8a-e530-43e8-bfd7-ef9fcb04e864}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arm">
+      <UniqueIdentifier>{f179e8cb-53ac-4b43-9470-6f8944725312}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{6123a4e6-1a74-4a13-89c6-798f6786d0f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu">
+      <UniqueIdentifier>{66971048-3573-4877-b215-f0864b057eeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mode">
+      <UniqueIdentifier>{f390c092-db81-4028-b86b-1a7e10cc76ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu\Base">
+      <UniqueIdentifier>{0365d126-37c1-4f33-aad6-6521ee399cac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu\Specializations">
+      <UniqueIdentifier>{d30a5e19-82ad-41bf-8977-19b9ddb2e95f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Drink">
+      <UniqueIdentifier>{760dd556-a01f-4016-8cf0-8835f8f75739}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Boost">
+      <UniqueIdentifier>{90976af4-ed61-4ec2-9fdf-e2de79fce70f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu\Display">
+      <UniqueIdentifier>{72861274-c7ab-427a-b183-6f0e997ac14c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Boost\BoostModes">
+      <UniqueIdentifier>{7117cc7a-01ba-42bc-9cfd-1607564b0ecb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Boost\ProgressBar">
+      <UniqueIdentifier>{df42e601-6edd-467a-8104-0f2066e02aa4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="__vm\.Looping_Louie_2.vsarduino.h">
+      <Filter>GeneratedFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="Arm.h">
+      <Filter>Arm</Filter>
+    </ClInclude>
+    <ClInclude Include="ArmLeds.h">
+      <Filter>Arm</Filter>
+    </ClInclude>
+    <ClInclude Include="Callbacks.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Scheduler.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Signal.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Thread.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="Mode.h">
+      <Filter>Mode</Filter>
+    </ClInclude>
+    <ClInclude Include="ArmFactory.h">
+      <Filter>Arm</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Menu\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuItem.h">
+      <Filter>Menu\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="RootMenu.h">
+      <Filter>Menu\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfirmationItem.h">
+      <Filter>Menu\Specializations</Filter>
+    </ClInclude>
+    <ClInclude Include="IntegerInput.h">
+      <Filter>Menu\Specializations</Filter>
+    </ClInclude>
+    <ClInclude Include="PasswordInput.h">
+      <Filter>Menu\Specializations</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectionInput.h">
+      <Filter>Menu\Specializations</Filter>
+    </ClInclude>
+    <ClInclude Include="LLMenu.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Points.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Poti.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Modes.h">
+      <Filter>Mode</Filter>
+    </ClInclude>
+    <ClInclude Include="ChallengerMode.h">
+      <Filter>Mode</Filter>
+    </ClInclude>
+    <ClInclude Include="ManualMode.h">
+      <Filter>Mode</Filter>
+    </ClInclude>
+    <ClInclude Include="IdleMode.h">
+      <Filter>Mode</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomMode.h">
+      <Filter>Mode</Filter>
+    </ClInclude>
+    <ClInclude Include="DrinkDisplay.h">
+      <Filter>Drink</Filter>
+    </ClInclude>
+    <ClInclude Include="DrinkItem.h">
+      <Filter>Drink</Filter>
+    </ClInclude>
+    <ClInclude Include="DrinkMenu.h">
+      <Filter>Drink</Filter>
+    </ClInclude>
+    <ClInclude Include="Drinks.h">
+      <Filter>Drink</Filter>
+    </ClInclude>
+    <ClInclude Include="Definitions.h" />
+    <ClInclude Include="Boost.h">
+      <Filter>Boost</Filter>
+    </ClInclude>
+    <ClInclude Include="BoostButton.h">
+      <Filter>Boost</Filter>
+    </ClInclude>
+    <ClInclude Include="BoostFactory.h">
+      <Filter>Boost</Filter>
+    </ClInclude>
+    <ClInclude Include="Display.h">
+      <Filter>Menu\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="Displays.h">
+      <Filter>Menu\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="LCD.h">
+      <Filter>Menu\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectItem.h">
+      <Filter>Menu\Specializations</Filter>
+    </ClInclude>
+    <ClInclude Include="Configuration.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="GroundLighting.h">
+      <Filter>Arm</Filter>
+    </ClInclude>
+    <ClInclude Include="Motor.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="BoostedMotor.h">
+      <Filter>Boost</Filter>
+    </ClInclude>
+    <ClInclude Include="PeriodMode.h">
+      <Filter>Boost\BoostModes</Filter>
+    </ClInclude>
+    <ClInclude Include="InactiveMode.h">
+      <Filter>Boost\BoostModes</Filter>
+    </ClInclude>
+    <ClInclude Include="ControlMode.h">
+      <Filter>Boost\BoostModes</Filter>
+    </ClInclude>
+    <ClInclude Include="BoostMode.h">
+      <Filter>Boost\BoostModes</Filter>
+    </ClInclude>
+    <ClInclude Include="ImpulseMode.h">
+      <Filter>Boost\BoostModes</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgressBar_J.h">
+      <Filter>Boost\ProgressBar</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgressBar.h">
+      <Filter>Boost\ProgressBar</Filter>
+    </ClInclude>
+    <ClInclude Include="OldLeds.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="CSingletonTemplate.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Looping_Louie_2.ino" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Arm.cpp">
+      <Filter>Arm</Filter>
+    </ClCompile>
+    <ClCompile Include="ArmLeds.cpp">
+      <Filter>Arm</Filter>
+    </ClCompile>
+    <ClCompile Include="Scheduler.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Thread.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Menu.cpp">
+      <Filter>Menu\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuItem.cpp">
+      <Filter>Menu\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="RootMenu.cpp">
+      <Filter>Menu\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="LLMenu.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Poti.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Color.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Modes.cpp">
+      <Filter>Mode</Filter>
+    </ClCompile>
+    <ClCompile Include="DrinkItem.cpp">
+      <Filter>Drink</Filter>
+    </ClCompile>
+    <ClCompile Include="Boost.cpp">
+      <Filter>Boost</Filter>
+    </ClCompile>
+    <ClCompile Include="Display.cpp">
+      <Filter>Menu\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="Displays.cpp">
+      <Filter>Menu\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="LCD.cpp">
+      <Filter>Menu\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="Configuration.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Motor.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="BoostMode.cpp">
+      <Filter>Boost\BoostModes</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgressBar.cpp">
+      <Filter>Boost\ProgressBar</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
