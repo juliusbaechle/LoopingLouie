@@ -157,10 +157,13 @@
     <ClInclude Include="BoostFactory.h" />
     <ClInclude Include="BoostMode.h" />
     <ClInclude Include="Button.h" />
+    <ClInclude Include="Callbacks.h" />
     <ClInclude Include="ChallengerMode.h" />
+    <ClInclude Include="Color.h" />
     <ClInclude Include="Configuration.h" />
     <ClInclude Include="ConfirmationItem.h" />
     <ClInclude Include="ControlMode.h" />
+    <ClInclude Include="CSingletonTemplate.h" />
     <ClInclude Include="Definitions.h" />
     <ClInclude Include="Display.h" />
     <ClInclude Include="Displays.h" />
@@ -169,28 +172,26 @@
     <ClInclude Include="DrinkMenu.h" />
     <ClInclude Include="Drinks.h" />
     <ClInclude Include="Game.h" />
-    <ClInclude Include="Callbacks.h" />
-    <ClInclude Include="Color.h" />
-    <ClInclude Include="CSingletonTemplate.h" />
     <ClInclude Include="GroundLighting.h" />
     <ClInclude Include="IdleMode.h" />
     <ClInclude Include="ImpulseMode.h" />
     <ClInclude Include="InactiveMode.h" />
     <ClInclude Include="IntegerInput.h" />
-    <ClInclude Include="PeriodMode.h" />
-    <ClInclude Include="ProgressBar.h" />
     <ClInclude Include="LCD.h" />
     <ClInclude Include="LLMenu.h" />
     <ClInclude Include="ManualMode.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="MenuItem.h" />
-    <ClInclude Include="OldLeds.h" />
     <ClInclude Include="Mode.h" />
     <ClInclude Include="Modes.h" />
     <ClInclude Include="Motor.h" />
+    <ClInclude Include="MyString.h" />
+    <ClInclude Include="OldLeds.h" />
     <ClInclude Include="PasswordInput.h" />
+    <ClInclude Include="PeriodMode.h" />
     <ClInclude Include="Points.h" />
     <ClInclude Include="Poti.h" />
+    <ClInclude Include="ProgressBar.h" />
     <ClInclude Include="ProgressBar_J.h" />
     <ClInclude Include="RandomMode.h" />
     <ClInclude Include="RootMenu.h" />
@@ -204,27 +205,26 @@
     <ClInclude Include="__vm\.Looping_Louie_2.vsarduino.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Looping_Louie_2.ino" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="Arm.cpp" />
     <ClCompile Include="ArmLeds.cpp" />
     <ClCompile Include="Boost.cpp" />
     <ClCompile Include="BoostMode.cpp" />
+    <ClCompile Include="Color.cpp" />
     <ClCompile Include="Configuration.cpp" />
     <ClCompile Include="Display.cpp" />
     <ClCompile Include="Displays.cpp" />
     <ClCompile Include="DrinkItem.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="Color.cpp" />
     <ClCompile Include="LCD.cpp" />
     <ClCompile Include="LLMenu.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="MenuItem.cpp" />
     <ClCompile Include="Modes.cpp" />
     <ClCompile Include="Motor.cpp" />
+    <ClCompile Include="MyString.cpp" />
     <ClCompile Include="Poti.cpp" />
     <ClCompile Include="ProgressBar.cpp" />
+    <ClCompile Include="ProgressBar_J.cpp" />
     <ClCompile Include="RootMenu.cpp" />
     <ClCompile Include="Scheduler.cpp" />
     <ClCompile Include="Thread.cpp" />

@@ -4,6 +4,8 @@
 #include "Arduino.h"
 #include "Configuration.h"
 
+#define MIN_THRUST 35
+
 class Motor {             
 public:
   enum class Direction {

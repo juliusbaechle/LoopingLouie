@@ -13,8 +13,8 @@
 #include "IntegerInput.h"
 #include "PasswordInput.h"
 
-Button buttonBlack(PIN_TASTER_BLACK);
-Button buttonRed(PIN_TASTER_RED);
+Button buttonBlack(PIN_TASTER_RIGHT);
+Button buttonRed(PIN_TASTER_LEFT);
 
 
 LLMenu::LLMenu() {
