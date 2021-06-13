@@ -1,0 +1,14 @@
+PIN 34 und 36 sind doppelt belegt
+Alle Arm Led Streifen leuchten nicht weiß sondern rosa: Mangelhafte Stromversorgung?
+I2C Displays reagieren nicht
+Laserdioden Lila & Rot leuchten nicht
+Grüner mittlerer Photoresistor nicht korrekt verbunden (Lila & Rot nicht testbar)
+Fortschrittsbalken Rot reagiert nicht
+Motor-Schalter klemmt aufgrund von Kabeln
+Anschluss für Netzteil nicht befestigt
+Reihenfolge der Arme bitte: Gelb, Rot, Grün, Lila
+
+ Information
+------------------------------------------
+ Ursprünglich PIN 0: Taster Rechts, PIN 1: Alte Leds unter Wippe; Verlegt auf 34 bzw. 36 (Julius & Thomas)
+ Zustätzlich Thomas: Arm-Leds Grün & Lila
