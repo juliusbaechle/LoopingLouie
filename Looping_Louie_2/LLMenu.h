@@ -24,19 +24,9 @@ public:
   MenuItem* getMenuPoints() { return m_menuPoints; }
   bool isMenuPlayOpen();
 
-  static void setup() { GetInstance(); }
-
 public:
-  Signal<bool>    SglReverse;
-  Signal<uint8_t> SglMaxThrust;
-  Signal<uint8_t> SglMode;
-  Signal<uint8_t> SglDrink;
-  Signal<uint8_t> SglCooldown;
-  Signal<uint8_t> SglBrightness;
-  Signal<uint8_t> SglBoostMode;
-  Signal<uint8_t> SglBoostAction;
-  Signal<>        SglResetPoints;
-  Signal<>        SglToggleState;
+  Signal<> SglResetPoints;
+  Signal<> SglToggleState;
   
 private:
   LLMenu();

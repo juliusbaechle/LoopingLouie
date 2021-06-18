@@ -12,6 +12,7 @@
 #include "SelectItem.h"
 #include "IntegerInput.h"
 #include "PasswordInput.h"
+#include "Configuration.h"
 
 Button buttonBlack(PIN_TASTER_RIGHT);
 Button buttonRed(PIN_TASTER_LEFT);
@@ -35,7 +36,7 @@ void LLMenu::setupMenus() {
 
     SelectItem* menuPlay;
     menuPlay = new SelectItem("Play", "Start Game");
-    menuPlay->SglSelected.connect([]() {qLLMenu->SglToggleState.emit(); });
+    menuPlay->SglSelected.connect(&SglToggleState, SLOT() Signal<>::emit);
     menuPlay->setIgnorePoti(true);
     m_menu->add(menuPlay);
     m_menuPlay = menuPlay;
@@ -44,7 +45,7 @@ void LLMenu::setupMenus() {
     m_events->setIgnorePoti(true);
       m_menuPoints = new MenuItem("Points", "", EDrawAs::Element);
         ConfirmationItem* menuConfirm = new ConfirmationItem("Reset Points");
-        menuConfirm->SglConfirmed.connect([]() { qLLMenu->SglResetPoints.emit(); });
+        menuConfirm->SglConfirmed.connect(&SglResetPoints, SLOT() Signal<>::emit);
         m_menuPoints->add(menuConfirm);
       m_events->add(m_menuPoints);
     m_menu->add(m_events);    
@@ -53,7 +54,7 @@ void LLMenu::setupMenus() {
     menuSettings->setIgnorePoti(true);
       
       SelectionInput* menuMode = new SelectionInput("Settings", "Mode");
-      menuMode->SglOptionChanged.connect([](uint8_t index) { qLLMenu->SglMode.emit(index); });
+      menuMode->SglOptionChanged.connect([](uint8_t index) { cfg->mode = index; });
         menuMode->addOption("Manual");
         menuMode->addOption("Challenger");
         menuMode->addOption("Random Easy");
@@ -62,7 +63,7 @@ void LLMenu::setupMenus() {
       menuSettings->add(menuMode);
 
       SelectionInput* menuReverse = new SelectionInput("Settings", "Reverse");
-      menuReverse->SglOptionChanged.connect([](uint8_t index) { qLLMenu->SglReverse.emit((bool)index); });
+      menuReverse->SglOptionChanged.connect([](uint8_t index) { cfg->turnReverse = index; });
         menuReverse->addOption("False");
         menuReverse->addOption("True");
       menuSettings->add(menuReverse);
@@ -70,20 +71,20 @@ void LLMenu::setupMenus() {
       MenuItem* menuMaxSpeed = new MenuItem("Settings", "MaxSpeed");
         MenuItem* menuPassword = new PasswordInput("1234");
           IntegerInput* inputMaxSpeed = new IntegerInput("MaxSpeed", 0, 255);
-          inputMaxSpeed->SglValueChanged.connect([](int64_t value) { qLLMenu->SglMaxThrust.emit((uint8_t)value); });
+          inputMaxSpeed->SglValueChanged.connect([](int64_t value) { cfg->maxThrust = value; });
           menuPassword->add(inputMaxSpeed);
         menuMaxSpeed ->add(menuPassword);
       menuSettings->add(menuMaxSpeed);
       
       SelectionInput* menuBoostAction = new SelectionInput("Settings", "Boost Action");
-      menuBoostAction->SglOptionChanged.connect([](uint8_t index) { qLLMenu->SglBoostAction.emit(index); });
+      menuBoostAction->SglOptionChanged.connect([](uint8_t index) { cfg->boostAction = index; });
         menuBoostAction->addOption("Boost");
         menuBoostAction->addOption("Stop");
         menuBoostAction->addOption("Reverse");
       menuSettings->add(menuBoostAction);
 
       SelectionInput* menuBoostMode = new SelectionInput("Settings", "Boost Mode");
-      menuBoostMode->SglOptionChanged.connect([](uint8_t index) { qLLMenu->SglBoostMode.emit(index); });
+      menuBoostMode->SglOptionChanged.connect([](uint8_t index) { cfg->boostMode = index; });
         menuBoostMode->addOption("Inactive");
         menuBoostMode->addOption("Impulse");
         menuBoostMode->addOption("Period");
@@ -92,18 +93,18 @@ void LLMenu::setupMenus() {
 
       MenuItem* menuCooldown = new MenuItem("Settings", "Cooldown");
         IntegerInput* inputCooldown = new IntegerInput("Cooldown", 5, 60);
-        inputCooldown->SglValueChanged.connect([](int64_t value) { qLLMenu->SglCooldown.emit((uint8_t)value); });
+        inputCooldown->SglValueChanged.connect([](int64_t value) { cfg->cooldown = value; });
       menuCooldown->add(inputCooldown);
       menuSettings->add(menuCooldown);
 
       MenuItem* menuBrightness = new MenuItem("Settings", "Brightness");
         IntegerInput* inputBrightness = new IntegerInput("Brightness", 0, 100);
-        inputBrightness->SglValueChanged.connect([](int64_t value) { qLLMenu->SglBrightness.emit((uint8_t)value); });
+        inputBrightness->SglValueChanged.connect([](int64_t value) { cfg->brightness = value; });
       menuBrightness->add(inputBrightness);
       menuSettings->add(menuBrightness);
 
       SelectionInput* menuDrink = new SelectionInput("Settings", "Drink");
-      menuDrink->SglOptionChanged.connect([](uint8_t index) { qLLMenu->SglDrink.emit(index); });
+      menuDrink->SglOptionChanged.connect([](uint8_t index) { cfg->drinkMode = index; });
         menuDrink->addOption("None");
         menuDrink->addOption("Easy");
         menuDrink->addOption("Hard");

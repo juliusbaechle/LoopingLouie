@@ -3,14 +3,15 @@
 #include "Boost.h"
 #include "Modes.h"
 #include "BoostMode.h"
+#include "eeprom.h"
 
-void eeprom_reset_to_defaults() {
-  eeprom_update_byte(ADDR_REVERSE, true);
-  eeprom_update_byte(ADDR_MAXTHRUST, 80);
-  eeprom_update_byte(ADDR_MODE, (uint8_t)EMode::Manual);
-  eeprom_update_byte(ADDR_DRINK, (uint8_t)EDrink::AllPlayers);
-  eeprom_update_byte(ADDR_COOLDOWN, 10);
-  eeprom_update_byte(ADDR_BRIGHTNESS, 50);
-  eeprom_update_byte(ADDR_BOOST_MODE, (uint8_t)EBoostMode::Impulse);
-  eeprom_update_byte(ADDR_BOOST_ACTION, (uint8_t)EBoostAction::Reverse);
+void Configuration::reset() {
+  turnReverse = true;
+  maxThrust   = 90;
+  mode        = (uint8_t)EMode::Manual;
+  drinkMode   = (uint8_t)EDrink::AllPlayers;
+  cooldown    = 10;
+  brightness  = 50;
+  boostMode   = (uint8_t)EBoostMode::Impulse;
+  boostAction = (uint8_t)EBoostAction::Reverse;
 }

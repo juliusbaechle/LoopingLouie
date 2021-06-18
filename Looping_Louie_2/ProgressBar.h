@@ -12,13 +12,10 @@ public:
   void show(uint8_t percent, bool active = false);
   void clear();
 
-  static void setBrightness(uint8_t brightness);
-
 private:
   virtual void fill(uint32_t color, uint8_t percent) = 0;
 
 protected: 
-  static uint8_t m_brightness;
   Adafruit_NeoPixel* m_pixels = nullptr;
 
 private:

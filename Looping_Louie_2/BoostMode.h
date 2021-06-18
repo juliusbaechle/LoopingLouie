@@ -14,18 +14,17 @@ enum class EBoostMode {
 
 class BoostMode {
 public:
-  BoostMode();
+  BoostMode() {};
   virtual ~BoostMode() {};
 
   bool isActive() { return m_active; }
-  uint8_t getCharge() { return (100 * m_charge) / m_cooldown; }
+  uint8_t getCharge() { return (100 * m_charge) / (1000 * cfg->cooldown); }
   void update(bool activate);
   void reset();
 
 
 public:
   static BoostMode* Create(EBoostMode mode);
-  static void setCooldown(uint8_t cooldown_s);
 
 
 public:
@@ -35,7 +34,6 @@ protected:
   
 
 protected:
-  static uint32_t m_cooldown;
   uint32_t m_charge = 0;
   bool m_active = false;
 

@@ -3,10 +3,11 @@
 #include "ManualMode.h"
 #include "RandomMode.h"
 #include "ChallengerMode.h"
-#include "LLMenu.h"
 #include "MenuItem.h"
 #include "Displays.h"
 #include "Definitions.h"
+#include "Configuration.h"
+#include "LLMenu.h"
 
 Modes::Modes(Motor& motor) : m_motor{ motor } {
   setMode(EMode::Idle);
@@ -15,7 +16,7 @@ Modes::Modes(Motor& motor) : m_motor{ motor } {
   timer->SglTimeout.connect(this, SLOT() Modes::update);
   timer->start();
 
-  qLLMenu->SglMode.connect(this, SLOT(uint8_t) Modes::modeChanged);
+  cfg->mode.sglChanged.connect(this, SLOT(uint8_t) Modes::modeChanged);
 }
 
 void Modes::setActive(bool active) {

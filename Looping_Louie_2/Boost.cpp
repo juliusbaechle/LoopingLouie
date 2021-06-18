@@ -13,7 +13,7 @@ Boost::Boost(ProgressBar& progressBar, BoostButton& boostButton)
   : m_progressBar{ progressBar }
   , m_button{ boostButton }
 {
-  qLLMenu->SglBoostMode.connect(this, SLOT(uint8_t) Boost::setMode);
+  cfg->boostMode.sglChanged.connect(this, SLOT(uint8_t) Boost::setMode);
   m_timer.SglTimeout.connect(this, SLOT() Boost::update);
 
   setMode(eeprom_read_byte(ADDR_BOOST_MODE));

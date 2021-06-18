@@ -2,8 +2,9 @@
 
 #include "BoostMode.h"
 
-#define RATIO_COOLDOWN_ACTION 8
-#define CONTROL_COOLDOWN  1000
+#define RATIO_COOLDOWN_ACTION 10
+#define MIN_RELEASE_TIME  1000
+#define CONTROL_MIN_CHARGE 1000
 
 class ControlMode : public BoostMode {
 public:
@@ -22,12 +23,13 @@ protected:
       if (m_active) m_lastRelease = millis();
       m_active = false;
       m_charge += deltaT;
-      if (m_charge > m_cooldown) m_charge = m_cooldown;
+      if (m_charge > (1000 * cfg->cooldown)) m_charge = (1000 * cfg->cooldown);
     }
   }
 
   bool onCooldown() {
-    return millis() - m_lastRelease < CONTROL_COOLDOWN;
+    return millis() - m_lastRelease < MIN_RELEASE_TIME
+      || m_charge < CONTROL_MIN_CHARGE;
   }
 
 private:

@@ -20,9 +20,6 @@
     <Filter Include="Modes">
       <UniqueIdentifier>{197bb579-d858-4928-9de2-9653f81617f4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Utility">
-      <UniqueIdentifier>{2559d06f-52c5-4361-8bd9-d18fbcf7e349}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Drinks">
       <UniqueIdentifier>{d52eb782-01a7-4371-8979-efa3f076d28f}</UniqueIdentifier>
     </Filter>
@@ -43,6 +40,12 @@
     </Filter>
     <Filter Include="Peripherals\Display">
       <UniqueIdentifier>{93ee7d85-28a0-4181-88c1-7f7b3aca4dc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{286439d6-8d18-4813-be6b-191989da63f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Configuration">
+      <UniqueIdentifier>{284ac224-3a9b-4545-a221-9aff5a8819ad}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -77,18 +80,6 @@
     </ClInclude>
     <ClInclude Include="ChallengerMode.h">
       <Filter>Modes</Filter>
-    </ClInclude>
-    <ClInclude Include="Color.h">
-      <Filter>Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="Configuration.h">
-      <Filter>Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="CSingletonTemplate.h">
-      <Filter>Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="Definitions.h">
-      <Filter>Utility</Filter>
     </ClInclude>
     <ClInclude Include="DrinkDisplay.h">
       <Filter>Drinks</Filter>
@@ -207,6 +198,18 @@
     <ClInclude Include="Button.h">
       <Filter>Peripherals</Filter>
     </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="CSingletonTemplate.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Definitions.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Configuration.h">
+      <Filter>Configuration</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp" />
@@ -218,12 +221,6 @@
     </ClCompile>
     <ClCompile Include="Boost.cpp">
       <Filter>Boost</Filter>
-    </ClCompile>
-    <ClCompile Include="Color.cpp">
-      <Filter>Utility</Filter>
-    </ClCompile>
-    <ClCompile Include="Configuration.cpp">
-      <Filter>Utility</Filter>
     </ClCompile>
     <ClCompile Include="DrinkItem.cpp">
       <Filter>Drinks</Filter>
@@ -247,9 +244,6 @@
       <Filter>Modes</Filter>
     </ClCompile>
     <ClCompile Include="ProgressBar.cpp">
-      <Filter>Boost\ProgressBar</Filter>
-    </ClCompile>
-    <ClCompile Include="ProgressBar_J.cpp">
       <Filter>Boost\ProgressBar</Filter>
     </ClCompile>
     <ClCompile Include="BoostMode.cpp">
@@ -279,5 +273,14 @@
     <ClCompile Include="Poti.cpp">
       <Filter>Peripherals</Filter>
     </ClCompile>
+    <ClCompile Include="Color.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Configuration.cpp">
+      <Filter>Configuration</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Looping_Louie_2.ino" />
   </ItemGroup>
 </Project>

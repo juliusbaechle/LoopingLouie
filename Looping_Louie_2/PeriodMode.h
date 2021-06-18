@@ -3,7 +3,7 @@
 #include "BoostMode.h"
 #include "Timer.h"
 
-#define PERIOD_MAX_DURATION 1000
+#define PERIOD_MAX_DURATION 2000
 #define PERIOD_MIN_CHARGE 2000
 
 class PeriodMode : public BoostMode {
@@ -14,7 +14,7 @@ public:
 
   void update(bool activate, uint16_t deltaT) {
     if (activate && !onCooldown()) {
-      uint32_t period = (PERIOD_MAX_DURATION * m_charge) / m_cooldown;
+      uint32_t period = (PERIOD_MAX_DURATION * m_charge) / (1000 * cfg->cooldown);
       m_actionTimer.setInterval(period);
       m_actionTimer.start();
 
@@ -23,7 +23,7 @@ public:
     }
     else {
       m_charge += deltaT;
-      if (m_charge > m_cooldown) m_charge = m_cooldown;
+      if (m_charge > (1000 * cfg->cooldown)) m_charge = (1000 * cfg->cooldown);
     }
   }
 

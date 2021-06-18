@@ -3,7 +3,6 @@
 #include "Motor.h"
 #include "Boost.h"
 #include "Configuration.h"
-#include "LLMenu.h"
 
 enum class EBoostAction {
   Boost,
@@ -17,7 +16,7 @@ public:
     : Motor(number)
     , m_boosts(boosts) 
   {
-    qLLMenu->SglBoostAction.connect(this, SLOT(uint8_t) BoostedMotor::setAction);
+    cfg->boostAction.sglChanged.connect(this, SLOT(uint8_t) BoostedMotor::setAction);
     for (int i = 0; i < 4; i++) m_boosts[i]->SglActive.connect(this, SLOT(bool) BoostedMotor::onActiveChanged);
   }
 

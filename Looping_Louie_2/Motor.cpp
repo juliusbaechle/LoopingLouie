@@ -1,5 +1,5 @@
 #include "Motor.h"
-#include "LLMenu.h"
+#include "Configuration.h"
 #include "Timer.h"
 #include "Definitions.h"
 
@@ -7,9 +7,6 @@
 
 
 Motor::Motor(Number number) {
-  qLLMenu->SglReverse.connect(this, SLOT(bool) Motor::setReverseEnabled);
-  qLLMenu->SglMaxThrust.connect(this, SLOT(uint8_t) Motor::setMaxThrust);
-
   setupPins(number);
 
   Timer* timer = new Timer(UPDATE_INTERVAL);
@@ -54,7 +51,7 @@ void Motor::setSpeed(int8_t percent, Direction dir) {
     dir = reverseDirection(dir);
   }
 
-  if (!m_reverse && dir == Direction::BACKWARD)
+  if (!cfg->turnReverse && dir == Direction::BACKWARD)
     dir = Direction::FORWARD;
 
   m_speed = percent;
@@ -80,7 +77,7 @@ void Motor::setVelocity(uint8_t speed) {
   }
   else {
     if (speed > 100) speed = 100;
-    uint8_t value = map(speed, 0, 100, MIN_THRUST, m_maxThrust);
+    uint8_t value = map(speed, 0, 100, MIN_THRUST, cfg->maxThrust);
     analogWrite(m_pinThrust, value);
   }
 }
@@ -95,16 +92,4 @@ Motor::Direction Motor::reverseDirection(Direction dir) {
     return Direction::FORWARD;
   
   return Direction::BACKWARD;
-}
-
-void Motor::setReverseEnabled(bool enabled) {
-  m_reverse = enabled; 
-  eeprom_update_byte(ADDR_REVERSE, enabled); 
-}
-
-void Motor::setMaxThrust(uint8_t maxThrust) {
-  m_maxThrust = maxThrust;
-  if (m_maxThrust < MIN_THRUST)
-    m_maxThrust = MIN_THRUST;
-  eeprom_update_byte(ADDR_MAXTHRUST, maxThrust);
 }

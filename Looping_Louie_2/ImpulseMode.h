@@ -19,12 +19,13 @@ public:
     }
     else {
       m_charge += deltaT;
-      if (m_charge > m_cooldown) m_charge = m_cooldown;
+      if (m_charge > (1000 * cfg->cooldown))
+        m_charge = (1000 * cfg->cooldown);
     }
   }
 
   bool onCooldown() {
-    return m_charge < m_cooldown;
+    return m_charge < (1000 * cfg->cooldown);
   }
 
 private:

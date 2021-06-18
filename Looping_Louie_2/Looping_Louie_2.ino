@@ -20,9 +20,8 @@ void setup() {
   Serial.begin(9600);
 
   randomSeed(analogRead(15));
-
   Displays::setup();
-  LLMenu::setup();
+  LLMenu menu();
   Game::setup();
   
   Scheduler::showLoad(true);
