@@ -150,13 +150,15 @@ void LLMenu::dismissPopup(MenuItem* popup) {
 
   m_events->add(popup);
   m_popups->remove(popup);
-  if (m_popups->size() == 0) m_currentMenu = m_menu;
+  if (m_popups->size() == 0) 
+    m_currentMenu = m_menu;
 }
 
 void LLMenu::removePopup(MenuItem* popup) {
   m_events->remove(popup);
   m_popups->remove(popup);
-  if (m_popups->size() == 0) m_currentMenu = m_menu;
+  if (m_popups->size() == 0) 
+    m_currentMenu = m_menu;
 }
 
 void LLMenu::deletePopup(MenuItem* popup) {

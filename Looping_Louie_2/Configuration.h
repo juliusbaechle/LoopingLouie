@@ -22,7 +22,6 @@ public:
     m_value = eeprom_read_byte(addr);
     m_addr = addr;
     m_name = name;
-    Serial.print("Set "); Serial.print(name); Serial.print(" to "); Serial.println(m_value);
   }
 
   Signal<T> sglChanged;

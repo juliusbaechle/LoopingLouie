@@ -34,6 +34,10 @@ public:
     }
   }
 
+  void updatePoints(const char* text) {
+    for (int i = 0; i < 4; i++)
+      m_drinkItems[i]->updatePoints(text);
+  }
 
   void showPopups() {
     for (int i = 0; i < 4; i++) {

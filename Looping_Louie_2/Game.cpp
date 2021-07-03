@@ -19,6 +19,7 @@ Game::Game()
     m_arms[i]->SglCoinsChanged.connect(this, SLOT(EColor, uint8_t) Game::onCoinsChanged);
 
   qLLMenu->SglToggleState.connect(this, SLOT() Game::toggleState);
+  m_points.sglNewText.connect(&m_drinks, SLOT(const char*) Drinks::updatePoints);
 }
 
 

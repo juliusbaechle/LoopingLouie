@@ -132,9 +132,6 @@
     <ClInclude Include="Mode.h">
       <Filter>Modes</Filter>
     </ClInclude>
-    <ClInclude Include="ProgressBar_J.h">
-      <Filter>Boost\ProgressBar</Filter>
-    </ClInclude>
     <ClInclude Include="ProgressBar.h">
       <Filter>Boost\ProgressBar</Filter>
     </ClInclude>
@@ -204,12 +201,10 @@
     <ClInclude Include="CSingletonTemplate.h">
       <Filter>Utility</Filter>
     </ClInclude>
-    <ClInclude Include="Definitions.h">
-      <Filter>Utility</Filter>
-    </ClInclude>
     <ClInclude Include="Configuration.h">
       <Filter>Configuration</Filter>
     </ClInclude>
+    <ClInclude Include="Definitions.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp" />

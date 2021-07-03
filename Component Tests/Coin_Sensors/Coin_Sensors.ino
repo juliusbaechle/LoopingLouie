@@ -8,7 +8,7 @@
 uint8_t pins[3] = { A6, A7, A8 }; // Grün
 // uint8_t pins[3] = { A9, A10, A11 }; // Lila
 
-#define THRESHHOLD 900
+#define THRESHHOLD 600
 
 void setup(){
   Serial.begin(9600);

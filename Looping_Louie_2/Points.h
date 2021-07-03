@@ -2,11 +2,13 @@
 
 #include "LLMenu.h"
 #include "MenuItem.h"
+#include "Signal.h"
 
 class Points {
 public:
   Points() {    
     qLLMenu->SglResetPoints.connect(this, SLOT() Points::reset);
+    sglNewText.connect([](const char* text) { qLLMenu->getMenuPoints()->setText(text); });
     reset();
   }
 
@@ -16,6 +18,8 @@ public:
     m_points[player] += value;
     updateText();
   }
+
+  Signal<const char*> sglNewText;
 
 private:
   void updateText() {
@@ -29,7 +33,7 @@ private:
       char digit0 = 48 + m_points[i] % 10;
       text[index + 1] = digit0;
     }
-    qLLMenu->getMenuPoints()->setText(text);
+    sglNewText.emit(text);    
   }
 
   void reset() {

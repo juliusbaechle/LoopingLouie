@@ -16,6 +16,7 @@ class Game : public CSingletonTemplate<Game> {
 public:
   bool isRunning() { return running; }
   static void setup() { GetInstance(); }
+  bool isPlayerIn(uint8_t player) { return m_playersIn.contains(player); }
 
 private:
   Game();

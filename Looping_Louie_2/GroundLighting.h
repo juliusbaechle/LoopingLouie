@@ -25,14 +25,16 @@ public:
 
 private:
   void fillSection(uint32_t color, uint8_t sectionNr) {
-    fill(color, PIXELS_PER_PLAYER * sectionNr, PIXELS_PER_PLAYER * (sectionNr + 1));
-  }
-
-  void fill(uint32_t color, uint8_t begin, uint8_t end) {
-    for (int i = begin; i < end; i++) {
-      m_pixels->setPixelColor(i, color);
+    for (int i = PIXELS_PER_PLAYER * sectionNr; i < PIXELS_PER_PLAYER * (sectionNr + 1); i++) {
+      #ifdef JULIUS
+        m_pixels->setPixelColor(i, color);
+      #else
+      int n = 121 - i;
+      if (n >= NUMPIXELS) 
+        n -= NUMPIXELS;
+      m_pixels->setPixelColor(n, color);
+      #endif
     }
-    m_pixels->show();
   }
 
   uint32_t getColor(uint8_t color) {
@@ -44,7 +46,7 @@ private:
   }
 
 private:
-  static const uint8_t NUMPIXELS = 44;
-  static const uint8_t PIXELS_PER_PLAYER = 11;
+  static const uint8_t NUMPIXELS = IF_JULIUS(45) IF_THOMAS(102);
+  static const uint8_t PIXELS_PER_PLAYER = IF_JULIUS(11) IF_THOMAS(26);
   Adafruit_NeoPixel* m_pixels;
 };

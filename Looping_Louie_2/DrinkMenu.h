@@ -27,6 +27,8 @@ public:
     dismiss();
   }
 
+  void updatePoints() {}
+
   void show() {
     if (m_nrShots > 0) {
       qLLMenu->showPopup(this);
@@ -52,22 +54,22 @@ private:
   void updateText(int shots) {
     char* text = "";
 
-    if (shots == 1) {
-      text = "1 Shot";
+    if (shots == 1) 
+      setText("1 Shot");
+    
+    if (shots > 1) {
+      String string;
+      string.concat(shots);
+      string.concat(" Shots");
+      setText(string.c_str());
     }
-    else {
-      text = "X Shots";
-      text[0] = 48 + shots;
-    }
-
-    setText(text);
   }
 
   const char* getTitle(uint8_t color) {
-    if (color == 0) return "Drink Yellow";
-    if (color == 1) return "Drink Red";
-    if (color == 2) return "Drink Green";
-    if (color == 3) return "Drink Purple";
+    if (color == 0) return "Yellow: Drink";
+    if (color == 1) return "Red: Drink";
+    if (color == 2) return "Green: Drink";
+    if (color == 3) return "Purple: Drink";
     return "";
   }
 

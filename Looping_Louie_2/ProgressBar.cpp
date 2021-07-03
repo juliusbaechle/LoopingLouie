@@ -33,3 +33,21 @@ void ProgressBar::clear() {
   m_pixels->clear();
   m_pixels->show();
 }
+
+void ProgressBar_J::fill(uint32_t color, uint8_t percent) {
+  uint8_t count = ((uint32_t)percent * NUMPIXELS) / 100;
+
+  for (int i = 0; i < count; i++)
+    m_pixels->setPixelColor(i, dimm(color, cfg->brightness));
+  for (int i = count; i < NUMPIXELS; i++)
+    m_pixels->setPixelColor(i, 0x00000000);
+}
+
+void ProgressBar_T::fill(uint32_t color, uint8_t percent) {
+  uint8_t count = ((uint32_t)percent * NUMPIXELS) / 100;
+
+  for (int i = 0; i < count; i++)
+    m_pixels->setPixelColor(NUMPIXELS - (i + 1), dimm(color, cfg->brightness));
+  for (int i = count; i < NUMPIXELS; i++)
+    m_pixels->setPixelColor(NUMPIXELS - (i + 1), 0x00000000);
+}

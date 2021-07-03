@@ -12,10 +12,10 @@ public:
 private:
   static Display* mainDisplay;
 
-#ifdef FOR_THOMAS
-public:
-  static Display* getExtraDisplay(uint8_t nr) { return extraDisplays[nr]; };
-private:
-  static Display* extraDisplays[4];
-#endif
+IF_THOMAS(
+  public:
+    static Display* getExtraDisplay(uint8_t nr) { return extraDisplays[nr]; };
+  private:
+    static Display* extraDisplays[4];
+)
 };

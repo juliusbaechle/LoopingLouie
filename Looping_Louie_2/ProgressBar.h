@@ -23,3 +23,26 @@ private:
   uint32_t m_activeColor;
   uint32_t m_readyColor;
 };
+
+class ProgressBar_J : public ProgressBar {
+public:
+  ProgressBar_J(uint32_t color, uint8_t pin)
+    : ProgressBar(color, pin, NUMPIXELS) {}
+
+private:
+  void fill(uint32_t color, uint8_t percent);
+
+private:
+  static const uint8_t NUMPIXELS = 21;
+};
+
+class ProgressBar_T : public ProgressBar {
+public:
+  ProgressBar_T(uint32_t color, uint8_t pin) : ProgressBar(color, pin, NUMPIXELS) {}
+
+private:
+  void fill(uint32_t color, uint8_t percent);
+
+private:
+  static const uint8_t NUMPIXELS = 12;
+};

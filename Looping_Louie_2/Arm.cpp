@@ -1,7 +1,7 @@
 #include "Arm.h"
 #include "Timer.h"
 
-#define THRESHHOLD_OCCUPIED 900
+#define THRESHHOLD_OCCUPIED 600
 #define DEBOUNCE_TIME  1000
 #define DECREMENT_TIME 300
 
