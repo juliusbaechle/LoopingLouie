@@ -5,9 +5,9 @@
 #include "Configuration.h"
 
 enum class EBoostAction {
-  Boost,
+  Topspeed,
   Stop,
-  Reverse
+  TurnAround
 };
 
 class BoostedMotor : public Motor {
@@ -23,14 +23,14 @@ public:
   void setSpeedWhenOn() {
     if (m_countActive > 0) {
       switch (m_action) {
-        case EBoostAction::Reverse:
+        case EBoostAction::TurnAround:
           if (m_countActive % 2)
             setDirection(reverseDirection(m_dir));
           else
             setDirection(m_dir);
           setVelocity(m_speed);
           break;
-        case EBoostAction::Boost:
+        case EBoostAction::Topspeed:
           setDirection(m_dir);
           setVelocity(100);
           break;

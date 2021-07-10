@@ -18,8 +18,8 @@ void BoostMode::reset() {
 }
 
 BoostMode* BoostMode::Create(EBoostMode mode) {
-  if (mode == EBoostMode::Impulse) return new ImpulseMode();
-  if (mode == EBoostMode::Period)  return new PeriodMode();
-  if (mode == EBoostMode::Control) return new ControlMode();
+  if (mode == EBoostMode::WaitFillup) return new ImpulseMode();
+  if (mode == EBoostMode::EmptyCharge)  return new PeriodMode();
+  if (mode == EBoostMode::ControlTime) return new ControlMode();
   return new InactiveMode();
 }

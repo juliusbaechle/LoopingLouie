@@ -12,6 +12,6 @@ void Configuration::reset() {
   drinkMode   = (uint8_t)EDrink::AllPlayers;
   cooldown    = 10;
   brightness  = 50;
-  boostMode   = (uint8_t)EBoostMode::Impulse;
-  boostAction = (uint8_t)EBoostAction::Reverse;
+  boostMode   = (uint8_t)EBoostMode::WaitFillup;
+  boostAction = (uint8_t)EBoostAction::TurnAround;
 }

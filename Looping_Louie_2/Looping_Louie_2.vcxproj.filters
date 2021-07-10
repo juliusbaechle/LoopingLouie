@@ -93,9 +93,6 @@
     <ClInclude Include="Drinks.h">
       <Filter>Drinks</Filter>
     </ClInclude>
-    <ClInclude Include="GroundLighting.h">
-      <Filter>Arm</Filter>
-    </ClInclude>
     <ClInclude Include="IdleMode.h">
       <Filter>Modes</Filter>
     </ClInclude>
@@ -205,6 +202,9 @@
       <Filter>Configuration</Filter>
     </ClInclude>
     <ClInclude Include="Definitions.h" />
+    <ClInclude Include="GroundLighting.h">
+      <Filter>Peripherals</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp" />

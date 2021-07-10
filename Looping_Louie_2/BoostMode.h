@@ -6,10 +6,10 @@
 
 
 enum class EBoostMode {
-  Inactive,
-  Impulse,
-  Period,
-  Control
+  Disabled,
+  WaitFillup,
+  EmptyCharge,
+  ControlTime
 };
 
 class BoostMode {

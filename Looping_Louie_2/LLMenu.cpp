@@ -53,7 +53,7 @@ void LLMenu::setupMenus() {
     MenuItem* menuSettings = new MenuItem("Settings", "", EDrawAs::Invisible);
     menuSettings->setIgnorePoti(true);
       
-      SelectionInput* menuMode = new SelectionInput("Settings", "Mode");
+      SelectionInput* menuMode = new SelectionInput("Settings", "Game Mode");
       menuMode->SglOptionChanged.connect([](uint8_t index) { cfg->mode = index; });
         menuMode->addOption("Manual");
         menuMode->addOption("Challenger");
@@ -64,8 +64,8 @@ void LLMenu::setupMenus() {
 
       SelectionInput* menuReverse = new SelectionInput("Settings", "Reverse");
       menuReverse->SglOptionChanged.connect([](uint8_t index) { cfg->turnReverse = index; });
-        menuReverse->addOption("False");
-        menuReverse->addOption("True");
+        menuReverse->addOption("Disabled");
+        menuReverse->addOption("Enabled");
       menuSettings->add(menuReverse);
 
       MenuItem* menuMaxSpeed = new MenuItem("Settings", "MaxSpeed");
@@ -78,17 +78,17 @@ void LLMenu::setupMenus() {
       
       SelectionInput* menuBoostAction = new SelectionInput("Settings", "Boost Action");
       menuBoostAction->SglOptionChanged.connect([](uint8_t index) { cfg->boostAction = index; });
-        menuBoostAction->addOption("Boost");
+        menuBoostAction->addOption("Topspeed");
         menuBoostAction->addOption("Stop");
-        menuBoostAction->addOption("Reverse");
+        menuBoostAction->addOption("Turn Around");
       menuSettings->add(menuBoostAction);
 
-      SelectionInput* menuBoostMode = new SelectionInput("Settings", "Boost Mode");
+      SelectionInput* menuBoostMode = new SelectionInput("Settings", "Boost Control");
       menuBoostMode->SglOptionChanged.connect([](uint8_t index) { cfg->boostMode = index; });
-        menuBoostMode->addOption("Inactive");
-        menuBoostMode->addOption("Impulse");
-        menuBoostMode->addOption("Period");
-        menuBoostMode->addOption("Controlled");
+        menuBoostMode->addOption("Disabled");
+        menuBoostMode->addOption("Wait Fillup");
+        menuBoostMode->addOption("Empty Charge");
+        menuBoostMode->addOption("Control Time");
       menuSettings->add(menuBoostMode);
 
       MenuItem* menuCooldown = new MenuItem("Settings", "Cooldown");
@@ -103,11 +103,11 @@ void LLMenu::setupMenus() {
       menuBrightness->add(inputBrightness);
       menuSettings->add(menuBrightness);
 
-      SelectionInput* menuDrink = new SelectionInput("Settings", "Drink");
+      SelectionInput* menuDrink = new SelectionInput("Settings", "Drink Mode");
       menuDrink->SglOptionChanged.connect([](uint8_t index) { cfg->drinkMode = index; });
-        menuDrink->addOption("None");
-        menuDrink->addOption("Easy");
-        menuDrink->addOption("Hard");
+        menuDrink->addOption("Disabled");
+        menuDrink->addOption("One Player");
+        menuDrink->addOption("All Players");
       menuSettings->add(menuDrink);
 
     m_menu->add(menuSettings);
