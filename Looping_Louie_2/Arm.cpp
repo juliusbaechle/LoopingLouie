@@ -1,7 +1,6 @@
 #include "Arm.h"
 #include "Timer.h"
 
-#define THRESHHOLD_OCCUPIED 600
 #define DEBOUNCE_TIME  1000
 #define DECREMENT_TIME 300
 
@@ -20,6 +19,12 @@ void Arm::setPins(uint8_t a_pinFront, uint8_t a_pinMid, uint8_t a_pinEnd) {
   m_photoResistorPins[ePos_Front] = a_pinFront;
   m_photoResistorPins[ePos_Mid]   = a_pinMid;
   m_photoResistorPins[ePos_Back]  = a_pinEnd;
+}
+
+void Arm::setThresholds(uint16_t a_thresholdFront, uint16_t a_thresholdMid, uint16_t a_thresholdBack) {
+  m_thresholds[ePos_Front] = a_thresholdFront;
+  m_thresholds[ePos_Mid]   = a_thresholdMid;
+  m_thresholds[ePos_Back]  = a_thresholdBack;
 }
 
 void Arm::update() {
@@ -50,7 +55,7 @@ void Arm::setCoinsLeft(uint8_t coinsLeft) {
 }
 
 bool Arm::isOccupied(Position pos) {
-  return analogRead(m_photoResistorPins[pos]) > THRESHHOLD_OCCUPIED; 
+  return analogRead(m_photoResistorPins[pos]) > m_thresholds[pos]; 
 }
 
 bool Arm::isLastOccupied() {

@@ -62,6 +62,9 @@
 
   #define PIN_ONOFF_SWITCH    32
   #define PIN_GROUNDLIGHTING  46
+
+  #define PIN_FORWARD_1   8  
+  #define PIN_BACKWARD_1  9
 #endif
 
 #ifdef THOMAS
@@ -72,4 +75,7 @@
 
   #define PIN_ONOFF_SWITCH    50
   #define PIN_GROUNDLIGHTING  32
+
+  #define PIN_FORWARD_1   9  
+  #define PIN_BACKWARD_1  8
 #endif

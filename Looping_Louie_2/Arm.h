@@ -18,6 +18,7 @@ private:
 public:             
   Arm(EColor color, ArmLeds* leds);
   void setPins(uint8_t a_pinFront, uint8_t a_pinMid, uint8_t a_pinEnd);
+  void setThresholds(uint16_t a_thresholdFront, uint16_t a_thresholdMid, uint16_t a_thresholdBack);
 
   void update();
   uint8_t getCoinsLeft() { return m_coinsLeft; };
@@ -33,6 +34,8 @@ private:
 
 private:
   uint8_t m_photoResistorPins[3];
+  uint16_t m_thresholds[3];
+
   EColor m_color;
   ArmLeds* m_leds;
 
