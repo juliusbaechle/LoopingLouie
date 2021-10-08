@@ -1,5 +1,7 @@
 #pragma once
 
+#ifdef THOMAS
+
 #include "DrinkItem.h"
 #include "Game.h"
 #include "Button.h"
@@ -11,8 +13,8 @@
 class DrinkDisplay : public DrinkItem {
 public:
   DrinkDisplay(uint8_t player)
-    : m_display(Displays::getExtraDisplay(player))
-    , m_button(getBoostBtnPin(player))
+    : m_button(getBoostBtnPin(player))
+    , m_display(Displays::getExtraDisplay(player)))
     , m_player(player)
     , m_timer(50)
   {
@@ -88,3 +90,5 @@ private:
   uint8_t m_player = 0;
   uint32_t m_outTimestamp = 0;
 };
+
+#endif

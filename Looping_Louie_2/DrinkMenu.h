@@ -27,7 +27,7 @@ public:
     dismiss();
   }
 
-  void updatePoints() {}
+  void updatePoints(const char*) {}
 
   void show() {
     if (m_nrShots > 0) {
